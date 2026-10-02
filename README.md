@@ -1,69 +1,84 @@
-# Welcome to your Lovable project
+# Adam — AI Text-to-CAD Generator
 
-## Project info
+An AI-powered CAD web app that turns plain-language prompts into 3D CAD models. Describe what you want to build — "Speak anything into existence" — and get an interactive 3D model you can inspect, rotate, and iterate on, right in the browser.
 
-**URL**: https://lovable.dev/projects/328de7c5-7688-4cf6-bc54-0daafe636b06
+Originally generated with Lovable and refined as part of the LadeStack open-source collection.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **AI chat-driven CAD generation** — prompt-based workflow: type a description, get a 3D model
+- **Interactive 3D viewer** — real-time Three.js viewport with orbit/zoom/pan (react-three-fiber + drei)
+- **Landing + chat UI** — marketing hero sections (example chips, announcement bar, YC-style badge, search bar) plus a full chat interface
+- **Modern UI kit** — shadcn/ui components, Tailwind CSS, dark theme, responsive layout
+- **Client-side rendering** — no backend required; everything runs in the browser
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/328de7c5-7688-4cf6-bc54-0daafe636b06) and start prompting.
+- **Framework:** Vite 5 + React 18 + TypeScript
+- **3D:** Three.js, @react-three/fiber, @react-three/drei
+- **UI:** shadcn/ui, Radix UI primitives, Tailwind CSS, Tailwind Animate
+- **Utilities:** react-router-dom, TanStack Query, react-hook-form, Zod, recharts, Framer-style animations (vaul, cmdk)
 
-Changes made via Lovable will be committed automatically to this repo.
+## Project Structure
 
-**Use your preferred IDE**
+```
+CAD-with-AI/
+├── index.html              # HTML entry, page title "Adam"
+├── src/
+│   ├── main.tsx            # React entry point
+│   ├── App.tsx             # App shell, routing
+│   ├── pages/
+│   │   ├── Index.tsx       # Landing page (hero, features, 3D showcase)
+│   │   ├── Chat.tsx        # AI chat / CAD generation interface
+│   │   └── NotFound.tsx    # 404 page
+│   ├── components/
+│   │   ├── Interactive3DViewer.tsx  # Three.js model viewer
+│   │   ├── chat/           # Chat UI components
+│   │   ├── ui/             # shadcn/ui components
+│   │   └── ...             # Landing sections (hero, search bar, badges)
+│   ├── hooks/              # Custom React hooks
+│   ├── lib/                # Utilities
+│   ├── index.css           # Global styles, Tailwind
+│   └── App.css
+├── public/                 # Static assets
+├── vite.config.ts
+└── tailwind.config.ts
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Quick Start
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Requirements: Node.js 18+ and npm.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone
+git clone https://github.com/girishlade111/CAD-with-AI.git
+cd CAD-with-AI
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Install dependencies
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start dev server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open http://localhost:5173 in your browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Build
 
-**Use GitHub Codespaces**
+```sh
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Outputs a production bundle to `dist/`, ready to serve as a static site.
 
-## What technologies are used for this project?
+## Deployment
 
-This project is built with .
+Static output — deploy `dist/` to any static host (Netlify, Vercel, GitHub Pages, Cloudflare Pages). No environment variables required.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## License
 
-## How can I deploy this project?
+Open source — free to use and adapt.
 
-Simply open [Lovable](https://lovable.dev/projects/328de7c5-7688-4cf6-bc54-0daafe636b06) and click on Share -> Publish.
+---
 
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Built by Girish Lade — https://ladestack.in
